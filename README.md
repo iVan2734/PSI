@@ -13,21 +13,26 @@
 
 ### Features implemented in demo
 - Music recommendation, discover and my music page styling
-<img src="./ReadMeAssets/PageViewOpt.gif" width="600" alt="App Demo Walkthrough">
-
-- Rating and viewing placeholder rattings visuals
-
-- Profile page visuals
-
-- Listen list local storage functionality
-
-- Follower and following view
-
-- Login/register pages
 
 - Search bar in discover tab
 
 - Album and artist view
+<img src="./ReadMeAssets/PageViewOpt.gif" width="600" alt="App Demo Walkthrough">
+
+- Rating and viewing placeholder rattings visuals
+<img src="./ReadMeAssets/RatingsOpt.gif" width="600" alt="App Demo Walkthrough">
+
+- Profile page visuals
+
+- Follower and following view
+
+- Listen list local storage functionality
+<img src="./ReadMeAssets/Profile" width="600" alt="App Demo Walkthrough">
+
+
+- Login/register pages
+
+
 
 ### Features to be added in demo
 - Artist song edit page
