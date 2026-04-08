@@ -27,11 +27,11 @@
 - Follower and following view
 
 - Listen list local storage functionality
-<img src="./ReadMeAssets/Profile" width="600" alt="App Demo Walkthrough">
+<img src="./ReadMeAssets/ProfileOpt" width="600" alt="App Demo Walkthrough">
 
 
 - Login/register pages
-
+<img src="./ReadMeAssets/LoginOpt" width="600" alt="App Demo Walkthrough">
 
 
 ### Features to be added in demo
