@@ -13,6 +13,7 @@
 
 ### Features implemented in demo
 - Music recommendation, discover and my music page styling
+<img src="./ReadMeAssets/PagesView.gif" width="600" alt="App Demo Walkthrough">
 
 - Rating and viewing placeholder rattings visuals
 
