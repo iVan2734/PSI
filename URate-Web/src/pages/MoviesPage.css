@@ -1,0 +1,50 @@
+.movies-page {
+    padding: 32px 24px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* -- Shared page chrome (header, search, labels) -- */
+.page-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.page-heading {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* -- Media grid (2:3 posters) --------------- */
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 16px;
+}
+
+.coming-soon .coming-soon-msg {
+    color: var(--text-secondary);
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+@media (max-width: 480px) {
+    .movies-page {
+        padding: 20px 16px 80px;
+    }
+
+    .page-header {
+        gap: 16px;
+    }
+
+    .media-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 12px;
+    }
+}

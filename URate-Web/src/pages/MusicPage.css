@@ -1,0 +1,178 @@
+.music-page {
+    padding: 32px 24px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.music-header {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.music-heading {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* -- Page tabs --------------------------- */
+.music-page-tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0;
+}
+
+.music-page-tab {
+    padding: 8px 18px;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: -1px;
+    transition: color 0.12s, border-color 0.12s;
+}
+
+.music-page-tab:hover {
+    color: var(--text-primary);
+}
+
+.music-page-tab.active {
+    color: var(--text-accent);
+    border-bottom-color: var(--accent);
+}
+
+/* -- Grids ------------------------------- */
+.songs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+}
+
+.song-grid-horizontal-scroll {
+    display: flex;
+    gap: 16px;
+    overflow-x: scroll;
+    padding-bottom: 8px;
+    max-width: 100%;
+}
+
+.albums-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 16px;
+}
+
+/* -- Artists row ------------------------- */
+.artists-row {
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+}
+
+.artists-row::-webkit-scrollbar {
+    display: none;
+}
+
+/* -- Search results sections ------------- */
+.search-results {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.search-section-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+}
+
+/* -- Search skeleton --------------------- */
+.search-skeleton {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.search-section-skeleton {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.skeleton-label {
+    height: 20px;
+    width: 120px;
+    border-radius: 6px;
+    background: var(--skeleton-base);
+    animation: skeleton-pulse 1.4s ease-in-out infinite;
+}
+
+.artist-skeleton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    width: 110px;
+    padding: 8px;
+}
+
+.artist-skeleton-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--skeleton-base);
+    animation: skeleton-pulse 1.4s ease-in-out infinite;
+}
+
+.artist-skeleton .skeleton-line {
+    border-radius: 4px;
+    background: var(--skeleton-base);
+    animation: skeleton-pulse 1.4s ease-in-out infinite;
+    display: block;
+}
+
+@keyframes skeleton-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.45;
+    }
+}
+
+/* -- Responsive -------------------------- */
+@media (max-width: 480px) {
+    .music-page {
+        padding: 20px 16px 80px;
+    }
+
+    .music-header {
+        gap: 16px;
+    }
+
+    .search-bar {
+        max-width: 100%;
+    }
+
+    .songs-grid,
+    .albums-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 12px;
+    }
+}

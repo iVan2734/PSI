@@ -1,0 +1,212 @@
+.song-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    min-width: 170px;
+}
+
+.song-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    border-color: var(--accent);
+}
+
+.song-art-wrap {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: var(--skeleton-base);
+    flex-shrink: 0;
+}
+
+.song-art {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.song-card:hover .song-art {
+    transform: scale(1.04);
+}
+
+/* -- Hover tag overlay ---------------------- */
+.song-card-tag-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    gap: 5px;
+    padding: 10px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.72) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+.song-card:hover .song-card-tag-overlay {
+    opacity: 1;
+}
+
+.song-card-tag {
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.song-card-tag--genre {
+    background: rgba(139, 92, 246, 0.75);
+    color: #fff;
+}
+
+.song-card-tag--feeling {
+    background: rgba(236, 72, 153, 0.75);
+    color: #fff;
+}
+
+.song-info {
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.song-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.song-artist {
+    font-size: 13px;
+    color: var(--text-accent);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.song-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2px;
+}
+
+.song-album {
+    font-size: 12px;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+    margin-right: 8px;
+}
+
+.song-duration {
+    font-size: 12px;
+    color: var(--text-muted);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* -- Listen list bookmark button ------------ */
+.song-bookmark {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(13, 13, 18, 0.72);
+    backdrop-filter: blur(4px);
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.18s, color 0.18s, background 0.18s, transform 0.15s;
+    z-index: 3;
+}
+
+.song-bookmark svg {
+    width: 14px;
+    height: 14px;
+}
+
+.song-card:hover .song-bookmark {
+    opacity: 1;
+}
+
+.song-bookmark:hover {
+    color: var(--accent);
+    background: rgba(13, 13, 18, 0.92);
+    transform: scale(1.1);
+}
+
+.song-bookmark--active {
+    opacity: 1;
+    color: var(--accent);
+}
+
+.song-bookmark--active:hover {
+    color: #f87171;
+}
+
+/* Skeleton */
+.song-card-skeleton {
+    pointer-events: none;
+}
+
+.skeleton-art {
+    aspect-ratio: 1;
+    background: var(--skeleton-base);
+    animation: skeleton-pulse 1.4s ease-in-out infinite;
+}
+
+.song-info .skeleton-line {
+    height: 12px;
+    border-radius: 6px;
+    background: var(--skeleton-base);
+    animation: skeleton-pulse 1.4s ease-in-out infinite;
+}
+
+.skeleton-title {
+    width: 80%;
+}
+
+.skeleton-artist {
+    width: 55%;
+    animation-delay: 0.1s;
+}
+
+.skeleton-album {
+    width: 65%;
+    animation-delay: 0.2s;
+}
+
+@keyframes skeleton-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.45;
+    }
+}

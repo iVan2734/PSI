@@ -1,0 +1,214 @@
+.album-view {
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Back button */
+.album-view-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 28px;
+    transition: color 0.15s;
+}
+
+.album-view-back:hover { color: var(--text-primary); }
+
+/* Hero */
+.album-view-hero {
+    display: flex;
+    gap: 28px;
+    align-items: flex-end;
+    margin-bottom: 32px;
+}
+
+.album-cover-wrap {
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--skeleton-base);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+}
+
+.album-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.album-cover-placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--skeleton-base);
+}
+
+.album-hero-info {
+    flex: 1;
+    min-width: 0;
+    padding-bottom: 4px;
+}
+
+.album-type-label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.album-hero-title {
+    font-size: clamp(24px, 4vw, 42px);
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.1;
+    margin-bottom: 12px;
+    word-break: break-word;
+}
+
+.album-hero-artist {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-accent);
+    margin-bottom: 6px;
+}
+
+.album-hero-meta {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+/* Skeleton hero */
+.skeleton-hero .skeleton-line {
+    border-radius: 6px;
+    background: var(--skeleton-base);
+    animation: skeleton-pulse 1.4s ease-in-out infinite;
+    display: block;
+}
+
+.skeleton-cover {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    background: var(--skeleton-base);
+    animation: skeleton-pulse 1.4s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+/* Tracklist */
+.album-tracklist {
+    border-top: 1px solid var(--border);
+    padding-top: 8px;
+}
+
+.tracklist-header {
+    display: grid;
+    grid-template-columns: 40px 1fr 48px;
+    padding: 6px 12px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 4px;
+    color: var(--text-muted);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    align-items: center;
+}
+
+.track-row {
+    display: grid;
+    grid-template-columns: 40px 1fr 48px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.15s;
+    align-items: center;
+}
+
+.track-row:hover { background: var(--hover-bg); }
+
+.track-row-skeleton { pointer-events: none; }
+
+.track-col-num {
+    font-size: 14px;
+    color: var(--text-muted);
+    text-align: right;
+    padding-right: 16px;
+}
+
+.track-col-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.track-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.track-artist {
+    font-size: 12px;
+    color: var(--text-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.track-col-duration {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.track-skeleton-lines .skeleton-line {
+    border-radius: 4px;
+    background: var(--skeleton-base);
+    animation: skeleton-pulse 1.4s ease-in-out infinite;
+    display: block;
+}
+
+@keyframes skeleton-pulse {
+    0%, 100% { opacity: 1;    }
+    50%       { opacity: 0.45; }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .album-view-hero {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .album-cover-wrap {
+        width: 140px;
+        height: 140px;
+    }
+
+    .skeleton-cover {
+        width: 140px;
+        height: 140px;
+    }
+}

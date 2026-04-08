@@ -1,0 +1,15 @@
+.shows-page {
+    padding: 32px 24px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.coming-soon .coming-soon-msg {
+    color: var(--text-secondary);
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+@media (max-width: 480px) {
+    .shows-page { padding: 20px 16px 80px; }
+}

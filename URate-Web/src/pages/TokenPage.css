@@ -1,0 +1,97 @@
+.token-page {
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.token-card {
+    width: 100%;
+    max-width: 380px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+}
+
+.token-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.token-msg {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.token-msg--ok {
+    color: #34d399;
+}
+
+.token-msg--error {
+    color: #f87171;
+}
+
+.token-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    text-align: left;
+}
+
+.token-label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
+}
+
+.token-input {
+    padding: 10px 14px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 14px;
+    outline: none;
+    font-family: inherit;
+    transition: border-color 0.2s;
+}
+
+.token-input:focus { border-color: var(--accent); }
+
+.token-submit {
+    padding: 11px;
+    background: var(--accent);
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background 0.2s, opacity 0.2s;
+}
+
+.token-submit:hover:not(:disabled) { background: var(--accent-hover); }
+.token-submit:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.token-link {
+    color: var(--text-muted);
+    font-size: 13px;
+    text-align: center;
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+.token-link:hover { color: var(--text-primary); }

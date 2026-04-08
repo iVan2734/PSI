@@ -1,0 +1,187 @@
+/* -- URate Design Tokens ------------------- */
+:root {
+    /* Colors */
+    --bg: #0d0d12;
+    --nav-bg: rgba(13, 13, 18, 0.85);
+    --card-bg: #16161f;
+    --border: #262633;
+    --hover-bg: rgba(255, 255, 255, 0.05);
+    --active-bg: rgba(139, 92, 246, 0.15);
+
+    --text-primary: #f0eff5;
+    --text-muted: #6b6880;
+    --text-accent: #a78bfa;
+
+    --accent: #8b5cf6;
+    --accent-hover: #7c3aed;
+
+    --skeleton-base: #1e1e2a;
+
+    /* Typography */
+    --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.5;
+    color-scheme: dark;
+    color: var(--text-primary);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Light mode override (system preference) */
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg: #f5f5f8;
+        --nav-bg: rgba(245, 245, 248, 0.85);
+        --card-bg: #ffffff;
+        --border: #e4e4ec;
+        --hover-bg: rgba(0, 0, 0, 0.04);
+        --active-bg: rgba(139, 92, 246, 0.1);
+
+        --text-primary: #1a1825;
+        --text-muted: #7c7a8e;
+        --text-accent: #7c3aed;
+
+        --skeleton-base: #ebebf0;
+        color-scheme: light;
+    }
+}
+
+/* -- Reset --------------------------------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+#root {
+    display: contents;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    color: var(--accent);
+}
+
+/* -- Shared page UI ------------------------- */
+
+/* Search bar */
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    max-width: 480px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 14px;
+    width: 18px;
+    height: 18px;
+    color: var(--text-muted);
+    pointer-events: none;
+    flex-shrink: 0;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 40px 10px 42px;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text-primary);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-input::placeholder {
+    color: var(--text-muted);
+}
+
+.search-input:focus {
+    border-color: var(--accent);
+}
+
+.search-input::-webkit-search-cancel-button {
+    display: none;
+}
+
+.search-clear {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 2px 6px;
+    line-height: 1;
+    border-radius: 4px;
+    transition: color 0.15s;
+}
+
+.search-clear:hover {
+    color: var(--text-primary);
+}
+
+/* Section / misc labels */
+.section-label {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin: 0 0 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.error-msg {
+    color: #f87171;
+    background: rgba(248, 113, 113, 0.1);
+    border: 1px solid rgba(248, 113, 113, 0.3);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.end-label {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-top: 32px;
+}
+
+.scroll-sentinel {
+    height: 1px;
+}

@@ -1,0 +1,117 @@
+.media-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.media-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    border-color: var(--accent);
+}
+
+.media-poster-wrap {
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    background: var(--skeleton-base);
+    flex-shrink: 0;
+}
+
+.media-poster {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.media-card:hover .media-poster {
+    transform: scale(1.04);
+}
+
+.media-no-poster {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 12px;
+}
+
+.media-info {
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.media-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.media-year {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+/* -- Skeleton ------------------------------- */
+.media-card-skeleton {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.media-skeleton-poster {
+    aspect-ratio: 2 / 3;
+    background: var(--skeleton-base);
+    animation: media-skeleton-pulse 1.4s ease-in-out infinite;
+}
+
+.media-card-skeleton .media-info {
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.media-skeleton-line {
+    height: 12px;
+    border-radius: 6px;
+    background: var(--skeleton-base);
+    animation: media-skeleton-pulse 1.4s ease-in-out infinite;
+}
+
+.media-skeleton-title {
+    width: 80%;
+}
+
+.media-skeleton-year {
+    width: 40%;
+    animation-delay: 0.1s;
+}
+
+@keyframes media-skeleton-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.45;
+    }
+}
