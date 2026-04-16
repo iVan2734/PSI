@@ -11,6 +11,15 @@
 
 - Pages that can not be accessed through ui are */profile* (**profile simulation**) and */user/lunar_waves* (**friend profile simulation**)
 
+### Setting up and starting the app
+#### Prerequisites
+-Node installed
+#### Setting up
+1. Pull the code and open the URate-Web folder in the IDE of choice
+2. Run npm install to install all needed files inside the folder
+3. Run npm run dev to start the pplication
+4. Access the app through localhost on port 3000
+
 ### Features implemented in demo
 - Music recommendation, discover and my music page styling
 
